@@ -1,3 +1,4 @@
+// This code created with the help of my peers. Thank you for the assistance.
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Manager = require("./lib/Manager");
@@ -19,22 +20,22 @@ function managerPrompt() {
         .prompt([
             {
                 type: "input",
-                message: "What is the team manager's name?",
+                message: "Please enter the team manager's name.",
                 name: "manName",
             },
             {
                 type: "input",
-                message: "What is the team manager's ID?",
+                message: "Please enter the team manager's ID.",
                 name: "id",
             },
             {
                 type: "input",
-                message: "What is the team manager's email?",
+                message: "Please enter the team manager's email.",
                 name: "email",
             },
             {
                 type: "input",
-                message: "What is the team manager's office number?",
+                message: "Please enter the team manager's office number.",
                 name: "officeNum",
             },
         ])
@@ -84,7 +85,7 @@ function questionPrompt() {
             },
             {
                 type: "confirm",
-                message: "Do you want to add another team member?",
+                message: "Would you like to add another member to the team?",
                 name: "addEmployee",
             },
         ])
