@@ -1,3 +1,4 @@
+// Test were provided by our teaching staff
 const Employee = require("../lib/Employee");
 
 test("Can instantiate Employee instance", () => {
@@ -44,5 +45,5 @@ test("Can get email via getEmail()", () => {
 test("getRole() should return \"Employee\"", () => {
   const testValue = "Employee";
   const e = new Employee("Alice", 1, "test@test.com");
-  expect(e.getRole()).toBe(testValue);
+  expect(e.getPosition()).toBe(testValue);
 });

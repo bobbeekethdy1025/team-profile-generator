@@ -4,6 +4,7 @@ const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const template = require("./src/template")
 const myTeam = [];
 
 
@@ -113,16 +114,16 @@ function questionPrompt() {
 }
 
 function generateHtml() {
-    fs.writeFile("./index.html", teamPageHtml.newHtml(), (err) => {
+    fs.writeFile("./index.html", template.newHtml(), (err) => {
         err ? console.error(err) : console.log("");
     });
 
     for(let i = 0; i < myTeam.length; i++) {
-        switch(myTeam[i].getRole()) {
+        switch(myTeam[i].getPosition()) {
             case "Manager":
                 fs.appendFile(
                     "./index.html",
-                    teamPageHtml.managerHtml(myTeam[i]),
+                    template.managerHtml(myTeam[i]),
                     (err) => {
                         err
                             ? console.error(err)
@@ -133,7 +134,7 @@ function generateHtml() {
             case "Engineer":
                 fs.appendFile(
                     "./index.html",
-                    teamPageHtml.engineerHtml(myTeam[i]),
+                    template.engineerHtml(myTeam[i]),
                     (err) => {
                         err
                             ? console.error(err)
@@ -144,7 +145,7 @@ function generateHtml() {
             case "Intern":
                 fs.appendFile(
                     "./index.html",
-                    teamPageHtml.internHtml(myTeam[i]),
+                    template.internHtml(myTeam[i]),
                     (err) => {
                         err
                             ? console.error(err)
@@ -155,7 +156,7 @@ function generateHtml() {
             default:
                 fs.writeFile(
                     "./index.html",
-                    teamPageHtml.closingHtml(),
+                    template.closingHtml(),
                     (err) => {
                         err
                             ? console.error(err)
