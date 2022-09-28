@@ -48,7 +48,6 @@ const managerHtml = (manager) => {
         </div>
     `;
 };
-// <a href="mailto:email@example.com">Send Email</a>
 
 const engineerHtml = (engineer) => {
     return `
